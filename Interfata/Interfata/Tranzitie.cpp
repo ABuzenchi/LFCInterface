@@ -6,7 +6,7 @@ Tranzitie::Tranzitie()
     m_secondState = nullptr;
 }
 
-Tranzitie::Tranzitie(State* firstState, State* secondState) : m_firstState(firstState), m_secondState(secondState), m_symbol(0)
+Tranzitie::Tranzitie(State* firstState, State* secondState) : m_firstState(firstState), m_secondState(secondState), m_symbol("0")
 {
 }
 
@@ -29,22 +29,15 @@ void Tranzitie::setSecondState(State* state)
 {
     m_secondState = state;
 }
-int Tranzitie::getSymbol()
+
+
+std::string Tranzitie::getSymbol()
 {
     return m_symbol;
 }
-void Tranzitie::setSymbol(int s)
+
+
+void Tranzitie::setSymbol(std::string s)
 {
     m_symbol = s;
 }
-//
-//std::string Tranzitie::getSymbol()
-//{
-//    return m_symbol;
-//}
-
-//
-//void Tranzitie::setSymbol(std::string s)
-//{
-//    m_symbol = s;
-//}

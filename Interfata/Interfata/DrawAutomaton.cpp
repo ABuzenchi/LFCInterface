@@ -116,9 +116,10 @@ void DrawAutomaton::WriteToFile(const QString& fileName)
 				out << matrix[i][j] << " ";
 			out << "\n";
 		}
-		for (auto tranz : m_tranzite)
-		{
-			out << tranz->getFirstState()->getValue() << " " << tranz->getSecondState()->getValue() << " " << tranz->getSymbol() << " ";
+		for (auto tranz : m_tranzite) {
+			out << tranz->getFirstState()->getValue() << " "
+				<< tranz->getSecondState()->getValue() << " "
+				<< QString::fromStdString(tranz->getSymbol()) << " ";
 		}
 	}
 	file.close();

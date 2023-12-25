@@ -7,8 +7,8 @@ class Tranzitie
 private:
 	State* m_firstState;
 	State* m_secondState;
-	//std::string m_symbol;
-	int m_symbol;
+	std::string m_symbol;
+	
 
 public:
 	Tranzitie();
@@ -19,10 +19,10 @@ public:
 	void setFirstState(State* state);
 	void setSecondState(State* state);
 
-	//std::string getSymbol();
-	int getSymbol();
-	//void setSymbol(std::string s);
-	void setSymbol(int s);
+	std::string getSymbol();
+	
+	void setSymbol(std::string s);
+
 	
 };
 

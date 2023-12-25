@@ -126,36 +126,19 @@ void Interfata::mouseReleaseEvent(QMouseEvent* mouseEvent)
                     {
 
 
-                        /*drawAutomaton->AddTranzitie(startState, s);
-                        bool ok;
-                        QString defaultSymbol = "~";
-                        QString newSymbol = QInputDialog::getText(
-                            this,
-                            tr("Enter new cost"),
-                            tr("Cost:"),
-                            QLineEdit::Normal,
-                            defaultSymbol,
-                            &ok
-                        );
-                        std::string symbolStr = newSymbol.toStdString();
-                        drawAutomaton->findTranzitie(startState, s)->setSymbol(symbolStr);
-                        startState->setSelected(false);*/
-
                         drawAutomaton->AddTranzitie(startState, s);
                         bool ok;
-                        int defaultSymbol = 0;
-                        int newSymbol = QInputDialog::getInt(
+                        std::string defaultSymbol = "0";
+                        QString  newSymbol = QInputDialog::getText(
                             this,
                             tr("Enter new symbol"),
                             tr("Symbol:"),
-                            defaultSymbol,
-                            std::numeric_limits<int>::min(),
-                            std::numeric_limits<int>::max(),
-                            1,
+                            QLineEdit::Normal,
+                            QString::fromStdString(defaultSymbol),
                             &ok
                         );
-
-                        drawAutomaton->findTranzitie(startState, s)->setSymbol(newSymbol);
+                        std::string newSymbolString = newSymbol.toStdString();
+                        drawAutomaton->findTranzitie(startState, s)->setSymbol(newSymbolString);
                         startState->setSelected(false);
                     }
                     update();
@@ -174,10 +157,15 @@ void Interfata::ShowEdgeCost()
 
     for (auto tranz : drawAutomaton->getTranzite())
     {
+        // Convert the values to QString using QString::number or other appropriate methods
+        QString firstStateValue = QString::number(tranz->getFirstState()->getValue());
+        QString secondStateValue = QString::number(tranz->getSecondState()->getValue());
+        QString symbol = QString::fromStdString(tranz->getSymbol());
+
         QString edgeInfo = QString("(%1, %2): %3\n")
-            .arg(tranz->getFirstState()->getValue())
-            .arg(tranz->getSecondState()->getValue())
-            .arg(tranz->getSymbol());
+            .arg(firstStateValue)
+            .arg(secondStateValue)
+            .arg(symbol);
 
         message += edgeInfo;
     }

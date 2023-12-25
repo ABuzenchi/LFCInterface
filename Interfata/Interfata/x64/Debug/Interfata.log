@@ -1,10 +1,3 @@
-﻿  FiniteAutomaton.cpp
-  State.cpp
-  Tranzitie.cpp
-  DrawAutomaton.cpp
-  Interfata.cpp
-  main.cpp
-C:\Users\HP\Desktop\Interfata\Interfata\FiniteAutomaton.cpp(157): warning C4715: 'FiniteAutomaton::FindSimbolForFinalState': not all control paths return a value
-  qrc_Interfata.cpp
+﻿  DrawAutomaton.cpp
   moc_Interfata.cpp
-  Interfata.vcxproj -> C:\Users\HP\Desktop\Interfata\x64\Debug\Interfata.exe
+  Interfata.vcxproj -> C:\Users\HP\Desktop\LFCInterface\Interfata\x64\Debug\Interfata.exe
